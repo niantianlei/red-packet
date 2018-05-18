@@ -28,17 +28,7 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 
 import redis.clients.jedis.JedisPoolConfig;
 
-/**
- * 注解@EnableTransactionManagement，并且实现TransactionManagementConfigurer，
- * 是为了实现注解式的事务，将来可以通过@Transactional配置事务。
- * annotationDrivenTransactionManager方法返回一个事务管理器。
- * 
- * 除了事务外，还配置了数据源SqlSessionFactoryBean和MyBatis的扫描类，并把MyBatis的扫描类通过
- * 注解@Repository和包名("com.*")限定。这样MyBatis就会通过Spring的机制找到对应的接口和配置，
- * Spring会把对应的接口装配到IoC容器中。
- * 
- * @author Niantianlei
- */
+
 @Configuration
 //定义Spring 扫描的包
 @ComponentScan(value= "com.*", includeFilters= {@Filter(type = FilterType.ANNOTATION, value ={Service.class})})
